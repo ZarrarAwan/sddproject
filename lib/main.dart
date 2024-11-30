@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:sddproject/widgets/camera_screen.dart';
 import 'package:sddproject/widgets/profile_screen.dart';
 import 'package:sddproject/widgets/signup_page.dart';
-import 'package:sddproject/widgets/take_picture.dart';
+//import 'package:sddproject/widgets/take_picture.dart';
 import 'firebase_options.dart';
 import 'widgets/community_support_screen.dart';
 import 'widgets/map.dart';
@@ -50,7 +50,7 @@ class SplashScreen extends StatelessWidget {
                 fit: BoxFit.contain, // Preserve aspect ratio
               ),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
 
             // Get Started button
             ElevatedButton(
@@ -63,7 +63,7 @@ class SplashScreen extends StatelessWidget {
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.teal, // Button color
-                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
               ),
               child: Text(
                 'GET STARTED',
@@ -94,7 +94,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [Colors.black, Color(0xFF1D9387)], // Gradient colors
             begin: Alignment.topRight,
@@ -123,24 +123,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         color: Colors.teal[100],
                       ),
                     ),
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
 
                     // Full Name Field
                     _buildInputField('FULL NAME', 'Enter Full Name'),
-                    SizedBox(height: 15),
+                    const SizedBox(height: 15),
 
                     // Phone Number Field
                     _buildInputField('PHONE NUMBER', 'Enter Your Number'),
-                    SizedBox(height: 15),
+                    const SizedBox(height: 15),
 
                     // Email Address Field
                     _buildInputField('EMAIL ADDRESS', 'Enter Your Email'),
-                    SizedBox(height: 15),
+                    const SizedBox(height: 15),
 
                     // Password Field
                     _buildInputField('CREATE PASSWORD', 'Create Password',
                         isPassword: true),
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
 
                     // Login Link
                     TextButton(
@@ -157,7 +157,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
 
                     // Bottom buttons: Skip and Next
                     Row(
@@ -174,7 +174,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.teal[700], // Button color
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 horizontal: 30, vertical: 15),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30),
@@ -198,7 +198,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.teal[700], // Button color
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 horizontal: 30, vertical: 15),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30),
@@ -238,7 +238,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             letterSpacing: 1.5,
           ),
         ),
-        SizedBox(height: 5),
+        const SizedBox(height: 5),
         // TextField
         TextField(
           obscureText: isPassword,
@@ -251,7 +251,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               borderRadius: BorderRadius.circular(30),
               borderSide: BorderSide.none,
             ),
-            contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+            contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
           ),
         ),
       ],
@@ -269,7 +269,7 @@ class RegPage extends StatelessWidget {
         backgroundColor: Colors.black,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.close, color: Colors.white, size: 30),
+          icon: const Icon(Icons.close, color: Colors.white, size: 30),
           onPressed: () {
             // Navigate back to the SplashScreen when the "X" is clicked
             Navigator.pushAndRemoveUntil(
@@ -281,7 +281,7 @@ class RegPage extends StatelessWidget {
         ),
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [Colors.black, Color(0xFF1D9387)], // Gradient colors
             begin: Alignment.topRight,
@@ -303,30 +303,31 @@ class RegPage extends StatelessWidget {
               ),
               textAlign: TextAlign.center, // Center the heading
             ),
-            SizedBox(height: 45), // Reduced spacing below the heading
+            const SizedBox(height: 45), // Reduced spacing below the heading
 
             // First Name Section
             _buildInputSection('FIRST NAME:', 'Enter First Name'),
-            SizedBox(height: 40), // Spacing between text fields
+            const SizedBox(height: 40), // Spacing between text fields
             // Last Name Section
             _buildInputSection('LAST NAME:', 'Enter Last Name'),
-            SizedBox(height: 40), // Add spacing before the button
+            const SizedBox(height: 40), // Add spacing before the button
 
             // Next Button
             Center(
               child: ElevatedButton(
                 onPressed: () {
+
                   // Handle next button press
                 },
                 style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(horizontal: 60, vertical: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 15),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
                   ),
                   backgroundColor:
                   Colors.black, // Background color of the button
                 ),
-                child: Text(
+                child: const Text(
                   'NEXT',
                   style: TextStyle(
                     fontSize: 20,
@@ -350,14 +351,14 @@ class RegPage extends StatelessWidget {
         // Label
         Text(
           label,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
             fontSize: 18,
             letterSpacing: 2.0,
           ),
           textAlign: TextAlign.center, // Center the label
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         // Input Field
         _buildTextField(hintText),
       ],
@@ -368,7 +369,7 @@ class RegPage extends StatelessWidget {
     return TextField(
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: TextStyle(color: Colors.white54),
+        hintStyle: const TextStyle(color: Colors.white54),
         filled: true,
         fillColor: Colors.black,
         border: OutlineInputBorder(
@@ -391,7 +392,7 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white, size: 30),
+          icon: const Icon(Icons.arrow_back, color: Colors.white, size: 30),
           onPressed: () {
             Navigator.pushAndRemoveUntil(
               context,
@@ -604,7 +605,7 @@ class _ResultPageState extends State<ResultPage> {
                         borderRadius: BorderRadius.circular(8),
                         borderSide: BorderSide.none,
                       ),
-                      hintText: "Enter Disease Name",
+                      hintText: "Disease Name",
                       hintStyle: const TextStyle(color: Colors.white54),
                     ),
                     style: const TextStyle(color: Colors.white),
@@ -635,7 +636,7 @@ class _ResultPageState extends State<ResultPage> {
                           borderRadius: BorderRadius.circular(8),
                           borderSide: BorderSide.none,
                         ),
-                        hintText: "Enter Description",
+                        hintText: "Description",
                         hintStyle: const TextStyle(color: Colors.white54),
                       ),
                       style: const TextStyle(color: Colors.white),
@@ -724,7 +725,7 @@ class spec_screen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white, size: 30),
+          icon: const Icon(Icons.arrow_back, color: Colors.white, size: 30),
           onPressed: () {
             Navigator.pushAndRemoveUntil(
               context,
@@ -754,7 +755,7 @@ class spec_screen extends StatelessWidget {
                         () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Maps(name: 'Hospital',),
+                        builder: (context) => const Maps(name: 'Hospital',),
                       ),
                     ),
                   ),
@@ -767,7 +768,7 @@ class spec_screen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Maps(name: 'Pharmacy',),
+                          builder: (context) => const Maps(name: 'Pharmacy',),
 
                           // Map(), // Navigate to ProfileScreen
                         ),
@@ -842,3 +843,4 @@ class spec_screen extends StatelessWidget {
     );
   }
 }
+
