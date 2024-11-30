@@ -71,8 +71,7 @@ class ProfileScreen extends StatelessWidget {
             Expanded(
               child: ListView(
                 children: [
-                  buildProfileOption(context, 'Disease History', Icons.local_hospital, DiseaseHistoryPage()),
-                  buildProfileOption(context, 'Edit Profile', Icons.edit, EditProfileScreen()),
+                 buildProfileOption(context, 'Edit Profile', Icons.edit, EditProfileScreen()),
                   buildProfileOption(context, 'Language', Icons.language, LanguageSelectionScreen()),
                   buildProfileOption(context, 'Change Password', Icons.password, ChangePassword()),
                   buildProfileOption(context, 'Accuracy', Icons.location_searching, AccuracyPage()),
@@ -345,7 +344,7 @@ class LanguageCard extends StatelessWidget {
   final String language;
   final String description;
 
-  LanguageCard({
+  const LanguageCard({
     required this.language,
     required this.description,
   });
@@ -1075,75 +1074,6 @@ class _AccuracyPageState extends State<AccuracyPage> {
   }
 }
 
-
-class DiseaseHistoryPage extends StatelessWidget {
-  // Sample list to simulate stored disease history
-  final List<Map<String, String>> diseaseHistory = [
-    {
-      'disease': 'Eczema',
-      'prescription': 'Use moisturizer and apply hydrocortisone cream.',
-      'date': '2024-11-30 10:30 AM',
-    },
-    {
-      'disease': 'Psoriasis',
-      'prescription': 'Apply salicylic acid-based ointment.',
-      'date': '2024-11-29 3:15 PM',
-    },
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Disease History'),
-        backgroundColor: Colors.teal,
-      ),
-      body: diseaseHistory.isEmpty
-          ? const Center(
-        child: Text(
-          'No history available.',
-          style: TextStyle(fontSize: 18),
-        ),
-      )
-          : ListView.builder(
-        padding: const EdgeInsets.all(10),
-        itemCount: diseaseHistory.length,
-        itemBuilder: (context, index) {
-          final history = diseaseHistory[index];
-          return Card(
-            elevation: 4,
-            margin: const EdgeInsets.symmetric(vertical: 8),
-            child: ListTile(
-              leading: const Icon(Icons.medical_services, color: Colors.teal),
-              title: Text(
-                history['disease']!,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                ),
-              ),
-              subtitle: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(height: 5),
-                  Text(
-                    'Prescription: ${history['prescription']}',
-                    style: const TextStyle(fontSize: 14),
-                  ),
-                  const SizedBox(height: 5),
-                  Text(
-                    'Date: ${history['date']}',
-                    style: const TextStyle(color: Colors.grey, fontSize: 12),
-                  ),
-                ],
-              ),
-            ),
-          );
-        },
-      ),
-    );
-  }
-}
 
 
 
