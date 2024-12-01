@@ -8,6 +8,8 @@ import 'package:sddproject/widgets/take_picture.dart';
 import 'firebase_options.dart';
 import 'widgets/community_support_screen.dart';
 import 'widgets/map.dart';
+import 'package:sddproject/widgets/edit_profile_screen.dart';
+
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -470,8 +472,7 @@ class HomeScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>
-                              ProfileScreen(), // Navigate to ProfileScreen
+                          builder: (context) => ProfileScreen(), // Navigate to ProfileScreen
                         ),
                       );
                     },
