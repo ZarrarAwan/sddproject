@@ -2,6 +2,7 @@ import 'package:camera/camera.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:sddproject/service/auth.dart';
 import '../main.dart';
 import 'package:sddproject/widgets/camera_screen.dart';
 
@@ -151,6 +152,32 @@ class Login extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
+            const Text(
+              "or LogIn with",
+              style: TextStyle(
+                  color: Color(0xFF273671),
+                  fontSize: 22.0,
+                  fontWeight: FontWeight.w500),
+            ),
+        const SizedBox(
+          height: 30.0,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            GestureDetector(
+              onTap: (){
+                AuthMethods().signInWithGoogle(context);
+              },
+              child: Image.asset(
+                'Assets/google.png',
+                height: 45,
+                width: 45,
+                fit: BoxFit.cover,
+              ),
+            ),
+
+
             Center(
               child: ElevatedButton(
                 onPressed: () => login(context),
@@ -173,8 +200,8 @@ class Login extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
+      ]),
+      ));
   }
 
   Widget _buildInputSection(String label, String hintText, TextEditingController controller) {

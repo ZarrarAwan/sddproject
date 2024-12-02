@@ -87,14 +87,14 @@ class _CameraScreenState extends State<CameraScreen> {
                 ),
               );
             } else {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
             }
           }),
           SafeArea(
               child: Padding(
-                  padding: EdgeInsets.only(left: 5, top: 10),
+                  padding: const EdgeInsets.only(left: 5, top: 10),
                   child: GestureDetector(
                     onTap: () {
                       Navigator.push(
@@ -105,7 +105,7 @@ class _CameraScreenState extends State<CameraScreen> {
                         ),
                       );
                     },
-                    child: Icon(
+                    child: const Icon(
                       Icons.close,
                       color: Colors.white,
                       size: 30,
@@ -157,7 +157,7 @@ class _CameraScreenState extends State<CameraScreen> {
             child: Align(
               alignment: Alignment.topRight,
               child: Padding(
-                padding: EdgeInsets.only(right: 5, top: 10),
+                padding: const EdgeInsets.only(right: 5, top: 10),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -168,10 +168,10 @@ class _CameraScreenState extends State<CameraScreen> {
                         });
                       },
                       child: isFlashOn ?
-                      Icon(Icons.flash_on, color: Colors.white,) :
-                      Icon(Icons.flash_off, color: Colors.white,),
+                      const Icon(Icons.flash_on, color: Colors.white,) :
+                      const Icon(Icons.flash_off, color: Colors.white,),
                     ),
-                    Gap(10),
+                    const Gap(10),
                     GestureDetector(
                       onTap: () {
                         setState(() {
@@ -180,8 +180,8 @@ class _CameraScreenState extends State<CameraScreen> {
                         isRearCamera ? StartCamera(0) : StartCamera(1);
                       },
                       child: isRearCamera ?
-                      Icon(Icons.camera_rear, color: Colors.white,) :
-                      Icon(Icons.camera_front, color: Colors.white,),
+                      const Icon(Icons.camera_rear, color: Colors.white,) :
+                      const Icon(Icons.camera_front, color: Colors.white,),
                     ),
                   ],
                 ),
