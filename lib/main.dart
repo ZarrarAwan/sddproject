@@ -490,7 +490,7 @@ class HomeScreen extends StatelessWidget {
                         () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => ResultPage(),
+                        builder: (context) => const ResultPage(),
                       ),
                     ),
                   ),
@@ -615,6 +615,8 @@ class HomeScreen extends StatelessWidget {
 }
 
 class ResultPage extends StatefulWidget {
+  const ResultPage({super.key});
+
   @override
   _ResultPageState createState() => _ResultPageState();
 }
@@ -747,13 +749,13 @@ class _ResultPageState extends State<ResultPage> {
                     onPressed: () {
                       // Implement Nearby Specialist navigation
                     },
-                    child: const Text("NEARBY SPECIALIST"),
                     style: ElevatedButton.styleFrom(
                       backgroundColor:
                       const Color(0xFF000000), // Updated Button color
                       padding: const EdgeInsets.symmetric(
                           vertical: 16), // Add vertical padding
                     ),
+                    child: const Text("NEARBY SPECIALIST"),
                   ),
                 ],
               ),
